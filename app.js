@@ -7,13 +7,13 @@ var express = require('express')
   , routes = require('./routes');
 var FB = require('fb');
 var fs = require('fs');
-
+var arg = require('optimist').argv;
 
 FB.api('oauth/access_token', {
 	client_id: '364847430262752',
 	client_secret: '4680b854a821ac600f3e90a4a5a99220',
 	grant_type: 'email, user_about_me, user_birthday, user_location, publish_stream',
-	redirect_uri:'http://iulogy.com:3000/'
+	redirect_uri:arg.redir
 }, function (res) {
 	if(!res || res.error) {
 	   console.log(!res ? 'error occurred' : res.error);
@@ -55,7 +55,7 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/', function(req,res){
+app.get('/aa/aa', function(req,res){
 	console.log(req);
 });
 
