@@ -59,6 +59,6 @@ app.get('/aa/aa', function(req,res){
 	console.log(req);
 });
 
-app.listen(3000, function(){
+app.listen(arg.port || 3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
